@@ -10,7 +10,8 @@ const BookingsSystem = () => {
 
         fetch('/bookings')
         .then(res => res.json())
-        .then(data => setBookings(data));
+        .then(data => setBookings(data))
+        .catch(console.error());
 
     }
 
@@ -24,7 +25,7 @@ const BookingsSystem = () => {
         // This will control the state of the front end
         <>
             <h1>Bookings information</h1>
-            <BookingList bookings={bookings}/>
+            <BookingList/>
         </>
 
 
