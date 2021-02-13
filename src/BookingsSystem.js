@@ -1,31 +1,27 @@
-import React, {useEffect, useState} from "react";
-import BookingList from "./BookingList";
 
-const BookingsSystem = () => {
+import app from "./App.js";
 
-    const [bookings, setBookings] = useState({});
-
-    const getBookings = () => {
-        console.log("getting bookings information");
-
-        fetch('/bookings')
-        .then(res => res.json())
-        .then(data => setBookings(data))
-        .catch(console.error());
-
-    }
-
-    useEffect(() => {
-        getBookings();
-    }, []);         // second argument not needed but entered anyway
+const BookingsSystem = ({bookings}) => {
 
     return (
 
-        
-        // This will control the state of the front end
         <>
             <h1>Bookings information</h1>
-            <BookingList/>
+            
+             <div>
+                <h3>booking details here</h3>
+                <p>{bookings}</p>
+                    <p>date</p>
+                    <p> course name </p>
+                    <p> town where course is held </p>
+                    <p> course rating </p>
+                    <p>List of other bookings made on course i.e. drop down of other customers with THEIR bookings?</p>
+                    <p> customer name</p>
+                    <p> customer town where they're from</p>
+                    <p> customer age</p>
+                    <p> List of their bookings?</p>
+                    
+            </div>
         </>
 
 
