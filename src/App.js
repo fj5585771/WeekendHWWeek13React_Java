@@ -1,37 +1,21 @@
 import './App.css';
-import BookingsSystem from "./BookingsSystem.js";
-import React, {useEffect, useState} from "react";
+import React, {Fragment} from "react";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import BookingsContainer from "./containers/BookingsContainer";
 
-function App() {
-
-  const [bookings, setBookings] = useState([]);
-
-  const getBookings = () => {
-      console.log("getting bookings information");
-
-      const url = "http://localhost:8080/bookings";
-      fetch(url)
-        .then(res => res.json())
-        .then(data => setBookings(data));
-  }
-
-  useEffect(() => {
-      getBookings();
-  }, []);  // second argument not needed but entered anyway
+const App = () => {
 
   return (
 
-    <>
-    <h1>Bookings System app</h1>
-    
-    <div id= "bookingComponent">
+      <Router>
+      <Fragment>
+        <Route 
+        path = "/bookings" component={BookingsContainer}/>}
 
-      <BookingsSystem />
+      </Fragment>      
+      </Router>
 
-    </div>
-
-   </>
-  );
+  )
 }
 
 export default App;
