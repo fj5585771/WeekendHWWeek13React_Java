@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const Bookings = ({booking}) => {
+const Booking = ({booking}) => {
 
-  if (!booking){
-    return <p>Loading...</p>
-  }
-
-  return (
-    <>
-    {booking.course} {booking.customer}
-
-    <p>Course {booking.course}</p>
-    <p>Ship/Customer: {booking.customer}</p>
-    </>
+    return (
     
-  )
-}
+    <div>
+    <p>course name:{booking.course.name}</p>
+    <p>situated: {booking.course.town}</p>
+    <p>rating: {booking.course.rating}</p>
+    <span id="customerDeets">Customer details:</span>
+    <p>name:{booking.customer.name}</p>
+    
+    </div>
+    
+    )
 
-export default Bookings;
+
+}
+export default Booking;

@@ -3,33 +3,31 @@ import Booking from "./Booking";
 
 const BookingsList = ({bookings}) => {
 
-    if (bookings.length === 0){
-        return <h3>Loading...</h3>;
+    if (bookings.length ===0) {
+        return (<p>Loading...</p>);
     }
 
     const bookingNodes = bookings.map((booking, index) => {
-    
-        return ( 
-
-        <li key={index} className="component-item">
-        
-        <div className="bookingsComponent">
-            <Booking booking={booking} />
-        </div>
-
-        </li>
-
+        return (
+            
+            <li key={index}>
+            <div>
+            <Booking booking={booking}/>
+            </div>
+            </li>
+            
         )
     })
 
-        return (
-    
-            <ul className="component-list">
+    return (
+        <>
+            <h4>Bookings</h4>
+            <ul>
                 {bookingNodes}
             </ul>
-
-        )
-
+        </>
+    
+    )
 }
 
 export default BookingsList;

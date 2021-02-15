@@ -1,21 +1,21 @@
 import './App.css';
 import React, {Fragment} from "react";
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import BookingsContainer from "./containers/BookingsContainer";
+import MainContainer from "./containers/MainContainer";
+import NavBar from "./components/NavBar";
 
 const App = () => {
 
   return (
-
       <Router>
-      <Fragment>
-        <Route 
-        path = "/bookings" component={BookingsContainer}/>}
+        <>
+        <NavBar />
+          <Route 
+          exact path = "/" component={MainContainer}/>
 
-      </Fragment>      
+        </>      
       </Router>
-
-  )
+  );
 }
 
 export default App;
